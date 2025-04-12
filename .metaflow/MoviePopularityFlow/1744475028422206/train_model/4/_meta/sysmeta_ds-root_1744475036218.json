@@ -1,0 +1,1 @@
+{"flow_id": "MoviePopularityFlow", "run_number": "1744475028422206", "step_name": "train_model", "task_id": "4", "field_name": "ds-root", "type": "ds-root", "value": "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/.metaflow", "tags": ["attempt_id:0"], "user_name": "srivatsakamballa", "ts_epoch": 1744475036218}

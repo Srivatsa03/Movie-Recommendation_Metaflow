@@ -1,0 +1,56 @@
+[MFLOG|0|2025-04-12T16:19:33.577027Z|runtime|433a8372-9459-4204-afa9-3df9d72edd5d]<flow MoviePopularityFlow step start> failed:
+[MFLOG|0|2025-04-12T16:19:33.589281Z|runtime|8c166c46-df7a-40ee-bf6f-b539ff1b055a]    Internal error
+[MFLOG|0|2025-04-12T16:19:33.592301Z|runtime|1a84d94d-2b86-479c-8f74-14a2ed227cdd]Traceback (most recent call last):
+[MFLOG|0|2025-04-12T16:19:33.592615Z|runtime|ee64a8d2-dcfc-47ba-a23a-1fe094d8bd42]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/cli.py", line 611, in main
+[MFLOG|0|2025-04-12T16:19:33.592828Z|runtime|70a01c31-fff0-41ce-a819-fe4f6cd49593]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-04-12T16:19:33.593083Z|runtime|b3da5a47-4312-44dc-a44a-dc56ea1aa467]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-04-12T16:19:33.593239Z|runtime|c31d31ec-272d-4ee2-b0c8-d6dbffeeb721]    return self.main(args, kwargs)
+[MFLOG|0|2025-04-12T16:19:33.744536Z|runtime|d73837ee-95ba-4eef-99a1-2856e1d133ad]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-04-12T16:19:33.744794Z|runtime|b910ce2f-6aac-4587-8e06-08bb4659b6f4]    rv = self.invoke(ctx)
+[MFLOG|0|2025-04-12T16:19:33.744852Z|runtime|18475057-0d48-48e9-b181-8776a803f394]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/cli_components/utils.py", line 69, in invoke
+[MFLOG|0|2025-04-12T16:19:33.744898Z|runtime|d2eee085-ac50-40c0-9344-cbb734efdb11]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-04-12T16:19:33.744939Z|runtime|40d58763-e922-4c09-99a0-94737b25e78e]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-04-12T16:19:33.744979Z|runtime|092db1c8-943e-4c3a-a5f6-a6cc1bbc28a9]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-04-12T16:19:33.745022Z|runtime|af127c58-fccb-49ab-9330-c9b1c0555bce]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-04-12T16:19:33.745062Z|runtime|cc76b2fa-f8a6-43ba-9cfc-867f31341d7f]    return callback(args, kwargs)
+[MFLOG|0|2025-04-12T16:19:33.745102Z|runtime|6354ddc4-0743-4897-8b0d-097c49a99bc0]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-04-12T16:19:33.745142Z|runtime|b6bbefb7-21db-4bb8-b21d-08417955f770]    return func(args, kwargs)
+[MFLOG|0|2025-04-12T16:19:33.745181Z|runtime|6bbba96b-6e18-468e-9362-aaff5c59d449]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-04-12T16:19:33.745221Z|runtime|9db39e59-756d-422a-b46e-fb059933a979]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-04-12T16:19:33.745261Z|runtime|05f01b23-0382-42db-b1a2-9f6dc25a32ec]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/cli_components/step_cmd.py", line 167, in step
+[MFLOG|0|2025-04-12T16:19:33.745300Z|runtime|b4d462a6-ee1d-44d7-9e87-1ff7e9074a19]    task.run_step(
+[MFLOG|0|2025-04-12T16:19:33.745338Z|runtime|9d2e028e-6db8-4be4-abdb-d1b4a3dfba6b]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/task.py", line 672, in run_step
+[MFLOG|0|2025-04-12T16:19:33.745378Z|runtime|27ec06e5-2774-43db-b872-5ffa3ac6c030]    self._exec_step_function(step_func)
+[MFLOG|0|2025-04-12T16:19:33.745417Z|runtime|38b9c5d1-48f4-4298-8474-59c549a639a6]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-04-12T16:19:33.745457Z|runtime|60213883-1cbf-473d-8c78-6a25ef167183]    step_function()
+[MFLOG|0|2025-04-12T16:19:33.745494Z|runtime|ac70311c-dcbb-41b4-84bd-c48ad3dce74c]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/movie_popularity_flow.py", line 25, in start
+[MFLOG|0|2025-04-12T16:19:33.745531Z|runtime|e43aa645-120c-4509-be00-8e09e6ad314a]    self.data = pd.read_csv(url)
+[MFLOG|0|2025-04-12T16:19:33.745568Z|runtime|ec2733e6-19ee-4425-9dd6-8d5ca4169957]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+[MFLOG|0|2025-04-12T16:19:33.745606Z|runtime|00fcc0b7-cd29-4c66-95fb-032dd5ffbab7]    return _read(filepath_or_buffer, kwds)
+[MFLOG|0|2025-04-12T16:19:33.745645Z|runtime|8f660454-584e-488d-898f-8870f27b1803]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+[MFLOG|0|2025-04-12T16:19:33.745683Z|runtime|2e3c2e73-e5a4-4504-8677-834ec9a8ad6b]    parser = TextFileReader(filepath_or_buffer, kwds)
+[MFLOG|0|2025-04-12T16:19:33.745722Z|runtime|923eab7b-adc0-4c72-959a-a694c13a0439]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+[MFLOG|0|2025-04-12T16:19:33.745761Z|runtime|4531eed1-396e-4b97-92cf-7079187cac21]    self._engine = self._make_engine(f, self.engine)
+[MFLOG|0|2025-04-12T16:19:33.745806Z|runtime|a1022dc3-a5ca-489a-aec3-dca9db02acfd]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+[MFLOG|0|2025-04-12T16:19:33.745843Z|runtime|226ed325-577d-4651-a2fb-eaa7479e95cf]    self.handles = get_handle(
+[MFLOG|0|2025-04-12T16:19:33.745884Z|runtime|480847bb-1d46-4efe-b6b5-5c47fe68cd13]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/pandas/io/common.py", line 728, in get_handle
+[MFLOG|0|2025-04-12T16:19:33.745922Z|runtime|212427e0-9f0b-40bf-901d-c4a990786060]    ioargs = _get_filepath_or_buffer(
+[MFLOG|0|2025-04-12T16:19:33.745958Z|runtime|74d3a8d4-f026-4a94-9f40-82fb984e4a71]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/pandas/io/common.py", line 384, in _get_filepath_or_buffer
+[MFLOG|0|2025-04-12T16:19:33.745995Z|runtime|753f34ac-a041-455b-a250-73b1bd1f752b]    with urlopen(req_info) as req:
+[MFLOG|0|2025-04-12T16:19:33.746033Z|runtime|e59b3dd4-c8b8-422f-842c-c164c40764a3]  File "/Users/srivatsakamballa/Desktop/Spring-2025/CS594/Homeworks/Homework-03/venv/lib/python3.9/site-packages/pandas/io/common.py", line 289, in urlopen
+[MFLOG|0|2025-04-12T16:19:33.746071Z|runtime|378cf635-e559-4241-ac0e-375e121b6601]    return urllib.request.urlopen(args, kwargs)
+[MFLOG|0|2025-04-12T16:19:33.746111Z|runtime|15e01141-d88e-48ec-a185-9f00fa87ad3e]  File "/Users/srivatsakamballa/.pyenv/versions/3.9.13/lib/python3.9/urllib/request.py", line 214, in urlopen
+[MFLOG|0|2025-04-12T16:19:33.746149Z|runtime|256b332a-88ac-4e26-81d5-b971a1a17bcc]    return opener.open(url, data, timeout)
+[MFLOG|0|2025-04-12T16:19:33.746187Z|runtime|9a6ab28b-857f-48dd-8442-c64b43d7d3f1]  File "/Users/srivatsakamballa/.pyenv/versions/3.9.13/lib/python3.9/urllib/request.py", line 523, in open
+[MFLOG|0|2025-04-12T16:19:33.746225Z|runtime|d471e55c-4187-4abd-bbef-6b1ae5bf8bfb]    response = meth(req, response)
+[MFLOG|0|2025-04-12T16:19:33.746264Z|runtime|b7b17df9-86f9-40cd-8536-761d93fe6e31]  File "/Users/srivatsakamballa/.pyenv/versions/3.9.13/lib/python3.9/urllib/request.py", line 632, in http_response
+[MFLOG|0|2025-04-12T16:19:33.746302Z|runtime|6e75f3a4-12ab-4aa4-8c8c-9199f63cd7d1]    response = self.parent.error(
+[MFLOG|0|2025-04-12T16:19:33.746339Z|runtime|8448f768-7202-4da8-8f99-8045440f2725]  File "/Users/srivatsakamballa/.pyenv/versions/3.9.13/lib/python3.9/urllib/request.py", line 561, in error
+[MFLOG|0|2025-04-12T16:19:33.746378Z|runtime|2648cab7-dae2-4796-a4b3-7d117a4ae963]    return self._call_chain(args)
+[MFLOG|0|2025-04-12T16:19:33.746416Z|runtime|6c67969e-6dae-4ab4-9886-59b6de7fd166]  File "/Users/srivatsakamballa/.pyenv/versions/3.9.13/lib/python3.9/urllib/request.py", line 494, in _call_chain
+[MFLOG|0|2025-04-12T16:19:33.746453Z|runtime|9b8fe06c-17d5-4c9f-b82d-9b7d700601c4]    result = func(args)
+[MFLOG|0|2025-04-12T16:19:33.746491Z|runtime|6aea05f5-1e36-4d06-abb1-3a87348011c3]  File "/Users/srivatsakamballa/.pyenv/versions/3.9.13/lib/python3.9/urllib/request.py", line 641, in http_error_default
+[MFLOG|0|2025-04-12T16:19:33.746529Z|runtime|b136a1fd-840e-4ce6-b14c-4748be8e1369]    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+[MFLOG|0|2025-04-12T16:19:33.746567Z|runtime|e549ddb9-b784-4131-ba9f-b1df02e0719d]urllib.error.HTTPError: HTTP Error 404: Not Found
+[MFLOG|0|2025-04-12T16:19:33.746606Z|runtime|9370ffed-079b-46de-9ca8-0f067ef65f38]
+[MFLOG|0|2025-04-12T16:19:33.747414Z|runtime|4f95e963-f676-4bd9-8e33-2ec78c92140e]Task failed.
