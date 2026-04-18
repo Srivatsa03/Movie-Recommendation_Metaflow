@@ -7,7 +7,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, accuracy_score, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 from metaflow.cards import Markdown, Image
-import os
 
 
 class MoviePopularityFlow(FlowSpec):
@@ -30,24 +29,26 @@ class MoviePopularityFlow(FlowSpec):
         """
         Preprocess and engineer a synthetic popularity label based on release year and title length.
         """
-        df = self.data.dropna()
+        df = self.data.dropna().copy()
 
         # Extract year from title
         def extract_year(title):
             try:
                 year = title.strip()[-5:-1]
-                return int(year)
-            except:
+                if year.isdigit():
+                    return int(year)
+                return np.nan
+            except Exception:
                 return np.nan
 
-        df['year'] = df['title'].apply(extract_year)
-        df = df.dropna(subset=['year'])
-        df['year'] = df['year'].astype(int)
+        df["year"] = df["title"].apply(extract_year)
+        df = df.dropna(subset=["year"]).copy()
+        df["year"] = df["year"].astype(int)
 
         # Create synthetic label: "popular" if after 2010 and long title
-        df['popularity'] = ((df['year'] > 2010) & (df['title'].str.len() > 20)).astype(int)
+        df["popularity"] = ((df["year"] > 2010) & (df["title"].str.len() > 20)).astype(int)
 
-        self.df = df[['title', 'year', 'popularity']]
+        self.df = df[["title", "year", "popularity"]]
         print(f"🧹 Cleaned data shape: {self.df.shape}")
         self.next(self.vectorize_data)
 
@@ -57,9 +58,9 @@ class MoviePopularityFlow(FlowSpec):
         Convert movie titles into numeric features using Bag-of-Words (CountVectorizer).
         """
         print("🔤 Vectorizing titles...")
-        vectorizer = CountVectorizer(stop_words='english', max_features=1000)
-        self.X = vectorizer.fit_transform(self.df['title']).toarray()
-        self.y = self.df['popularity'].values
+        vectorizer = CountVectorizer(stop_words="english", max_features=1000)
+        self.X = vectorizer.fit_transform(self.df["title"]).toarray()
+        self.y = self.df["popularity"].values
         self.vectorizer = vectorizer
         self.next(self.train_model)
 
